@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -n ., .., $(ls -Apv | grep -v "^\.\?$" | tr '\n' ',' | sed 's/,$//;s/,/, /g')
+printf "., .., %s" "$(ls -Apv | grep -vE '^\.?$' | paste -sd, -)"
