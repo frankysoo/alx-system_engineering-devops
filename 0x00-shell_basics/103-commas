@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -Apv1 | awk 'BEGIN{printf "., .., "}{if($0 != "." && $0 != "..") printf "%s, ", $0}' | sed 's/, $/\n/'
+echo -n ., .., $(ls -Apv | grep -v "^\.\?$" | tr '\n' ',' | sed 's/,$//;s/,/, /g')
