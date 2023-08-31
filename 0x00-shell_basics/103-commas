@@ -1,2 +1,3 @@
 #!/bin/bash
-printf "./, ../, %s" "$(ls -Apv | grep -vE '^\.\.?$' | tr '\n' ',' | sed 's/,$//; s/,/, /g')"
+echo -n "./, ../, "; ls -Apv | grep -vE '^\.\.?$' | tr '\n' ',' | sed 's/,$//; s/,/, /g'
+
