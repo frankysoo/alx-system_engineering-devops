@@ -1,3 +1,2 @@
 #!/bin/bash
-ls -Apa --quoting-style=literal | tr '\n' ',' | sed 's/,$/\n/' | sed 's/,/, /g'
-
+echo -n ., .., ; ls -Apv | egrep -v '^(\.|\.\.|$)' | tr '\n' ',' | sed 's/,$/\n/' | sed 's/,/, /g'
